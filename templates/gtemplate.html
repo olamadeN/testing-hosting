@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DtechAgric</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+   <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">  
+       <div class="container">
+            <img class="navbar-brand" src="{% static 'img/main-logo.png'%}" alt="DTECHAGRIC" width="18%">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-muted" id="mainNav">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'home'%}">HOME <span class="sr-only">(current)</span> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'newsletter:art_list'%}">NEWSLETTER</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navdd" data-toggle="dropdown" role="button">US</a>
+                        <div class="dropdown-menu" aria-labelledby="navdd">
+                            <a href="#contact" class="dropdown-item"> CONTACT US</a>
+                            <a href="#about" class="dropdown-item"> ABOUT US</a>
+                            <a href="#services" class="dropdown-item"> SERVICES</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'accounts:login'%}">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+       </div>
+       
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+    <footer class="global-footer footer mt-auto py-3">
+        <div class="container">
+            <div class="row mb-8">
+            <div class="col-md">
+                <div class="global-footer-widget mb-4">
+                    <h2 >DtechAgric</h2>
+                    <p>Meeting your requirements and exceeding your expectaions.</p>
+                    <ul class="global-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="global-footer-widget mb-3 ml-md-5">
+                    <h2 >Menu</h2>
+                    <ul class="list-unstyled" >
+                        <li><a href="#about" class="py-2 d-block">About</a></li>
+                        <li><a href="#projects" class="py-2 d-block">Projects</a></li>
+                        <li><a href="#contact" class="py-2 d-block">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="gloabl-footer-widget mb-4">
+                    <h2 id="haq" >Have a Question?</h2>
+                    <div class="block-23 pt-2">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text"> <b> Operational HQ:</b> 18B,Chris Ali Crescent Abacha Estate Ikoyi Lagos, Nigeria. <br>  Plot 3, Block C Ateniwijo Layout, Ayepe, New Ife Road,Ibadan, Nigeria.</span></li>
+                            <li><span class="icon icon-phone"></span><span class="text"> +234 817 778 6388 | +234 816 526 2928</span></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">email address goes here</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+
+
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <scriptt src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <scriptt src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> 
+
+
+</body>
+</html>

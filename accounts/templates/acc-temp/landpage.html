@@ -1,0 +1,48 @@
+{% extends 'gtemplate.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section>
+        <div class="container text-center my-5">
+            <h2 class="subheading my-5"> choose the account type you want to set up </h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img  style="height:220px;" src="{% static 'img/bg/1.jpg' %}" class="card-img-top img-fluid" alt="">
+                    </div>
+                    
+                    <div class="card-body">
+                        <a href="{%url 'accounts:signup'%}"> <h5 class="card-title">BUSINESS ACCOUNT</h5> </a> 
+                        <p class="card-text">
+                            sell agricultural produce to wholesalers or directly to consumers <br>
+                            buy produce directly from the fammers and sell to consumers
+                        </p>
+                    </div>
+                    
+    
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img  style="height:220px;" src="{% static 'img/bg/6.jpg' %}" class="card-img-top img-fluid" alt="">
+                    </div>
+                    <div class="card-body">
+                        <a href="#"> <h5 class="card-title">CONSUMER ACCOUNT</h5></a>
+                        <p class="card-text">
+                            buy produce directly from the fammers and wholesalers
+                        </p>
+                    </div>
+
+                </div>
+        
+            </div>
+        </div><br><br><br><br>
+
+    </section>
+    
+
+
+
+{% endblock %}

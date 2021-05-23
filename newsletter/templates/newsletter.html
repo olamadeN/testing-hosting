@@ -1,0 +1,79 @@
+{% extends 'gtemplate.html' %}
+{%load static%}
+{% block content %}
+    <style>
+        @media (max-width: 768px) {
+            #news-header-text h1 {
+                font-size: 40px; 
+                margin-top: 70px;
+            } 
+        }
+    </style>
+    <section>
+        <section>
+            <div class="news-image" style="background-image: url({% static 'img/bg/15.jpg' %});">
+            <div class="overlay"></div>
+                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                    <div class="col-sm-12 text-center" id="news-header-text">
+                        <h1 class="mb-3">NEWSLETTER</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container mt-5" >
+            <div class="row">
+                <div class="col-lg-8 " style="margin-top: 25px;">
+                    <div class="row">
+                        {% for item in art %}
+                            <div class=" article-area col-md-12 mb-5">
+                                    
+                                <h5 class="card-title text-left mb-4">
+                                    <a href="{% url 'newsletter:art_details' slug=item.slug  %}">{{item.title}}</a>
+                                </h5>
+                                <div class="card">
+                                    <img src="{{item.thumb.url}}" class="card-img-top" alt="">
+                                    <div class="card-body" id="card-body">
+                                        <span class="icon-calendar">&nbsp;{{item.date}}</span>  
+                                        <p class="card-left">
+                                            {{item.snapshot}}
+                                        </p>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        {% endfor %}  
+                    </div>
+                       
+                </div>
+
+                <div class="sidebar col-lg-4 mt-5 ">
+                    <div class="sidebar-box">
+                        <form action="#" class="search-form">
+                        <div class="form-group">
+                            <span class="icon ion-ios-search"></span>
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </div>
+                        </form> 
+                    </div>
+                      
+                    <div class="sidebar-box">
+                        <h3 class="heading">Recent news</h3>
+                        {% for item in art %}  
+                            <div class="block-21 mb-4 d-flex">
+                                <img class="recent-news-img mr-2" src="{{item.thumb.url}}" alt="">
+                                <div class="text">
+                                    <h3 class="heading-1 text-muted"><a href="#">{{item.title}}</a></h3>
+                                    <div class="meta">
+                                        <div><a href="#"><span class="icon-calendar"></span>{{item.date}}</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    </div>
+                                </div>   
+                            </div>
+                        {% endfor %}
+                    </div>
+                                        
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

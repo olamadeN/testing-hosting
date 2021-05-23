@@ -1,0 +1,31 @@
+{% extends 'gtemplate.html'%}
+
+{% block content %}
+
+<form class="form-signin" action="{% url 'accounts:signup'%}" method="post">
+    {%csrf_token%}
+    <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
+    
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+    <br>
+    <input type="text" id="first_name" name="first_name"  class="form-control" placeholder="first_name" required>
+    <br>
+    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="last_name" required >
+    <br>
+    <input type="text" id="username" name="username"  class="form-control" placeholder="username" >
+    <br>
+    <input type="password" id="inputPassword1" name="password1"  class="form-control" placeholder="Password" required>
+    <br>
+    <input type="password" id="inputPassword2" name="password2"  class="form-control" placeholder="confirm Password" required>
+    
+    {% if SignupForm.non_field_errors %}
+        <div style="color:red;">
+            <p>{{SignupForm.non_field_errors}}</p>
+        </div>
+    {%endif%}
+    
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">sign up</button>
+
+</form>
+{% endblock %}
